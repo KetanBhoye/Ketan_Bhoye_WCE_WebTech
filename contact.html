@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Handmade Crafts</title>
+    <!-- Bootstrap CSS CDN link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Handmade Crafts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <div class="form-inline ml-auto">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="search()">Search</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container mt-4 mb-auto">
+    <h1 class="text-center mb-4">Contact Us</h1>
+    <section class="contact">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form id="contactForm" action="submit.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="mt-auto">
+    <div class="container">
+        <div class="social">
+            <a href="https://facebook.com" target="_blank"><img src="./assets/images/facebook.png" alt="Facebook"></a>
+            <a href="https://instagram.com" target="_blank"><img src="./assets/images/instagram.png" alt="Instagram"></a>
+            <a href="https://twitter.com" target="_blank"><img src="./assets/images/twitter.png" alt="Twitter"></a>
+        </div>
+        <p>&copy; 2024 Handmade Crafts. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and jQuery CDN links (for Bootstrap components and functionality) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js" integrity="sha384-QS/2K4W4W7o5P7K4KlIQOJd0ZO4QwFjzLb2S+u9S5DuN0nQoYPZxumfwzjixEzs" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBPL9P1rh+A8zYar+YXQp+b9XDDci3Y6z" crossorigin="anonymous"></script>
+
+<!-- Custom script -->
+<script src="./scripts/script.js"></script>
+</body>
+</html>
