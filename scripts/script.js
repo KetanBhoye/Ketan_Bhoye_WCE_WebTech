@@ -1,6 +1,3 @@
-
-
-// Contact form validation and submission
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', function(event) {
@@ -24,9 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // If all validation passes, you can submit the form using AJAX or fetch API
-        // Here is an example alert for demonstration
-        alert('Form submitted successfully!');
+        // If all validation passes, show the modal
+        $('#submitModal').modal('show');
         form.reset(); // Optionally clear the form fields after submission
     });
 
@@ -56,6 +52,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial slide display
     showSlides(slideIndex);
-
-
 });
