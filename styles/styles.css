@@ -8,16 +8,36 @@ body {
     background-color: #f5f5f5;
 }
 
-.container {
-    max-width: 960px;
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.btn {
+    color: white;
+    border-color: white;
+}
+
+.navigation {
+    margin-left: 20px;
+}
+
+.search {
+    margin-left: auto;
 }
 
 /* Header and Footer Styles */
 header {
     background-color: #8b8b8b;
     color: white;
+    height: auto;
+    padding: 10px 0;
 }
 
 footer {
@@ -38,44 +58,42 @@ footer {
     transform: scale(1.2);
 }
 
-
-
-
-
 .navbar-brand span {
-    font-size: 44px; /* Increase font size */
-    font-weight: lighter; /* Make text bold */
+    font-size: 30px; /* Adjusted font size */
+    font-weight: normal; /* Bold text */
+}
+
+.logo {
+    width: 160px;
+    margin-right: 5px;
+    margin-top: -40px;
+    margin-bottom: -40px;
+}
+
+@media (max-width: 767.98px) {
+    .logo {
+        width: 40%; /* Make logo width full width on smaller screens */
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 0; /* Reset margin-right */
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .navbar-brand span {
+        font-size: 18px; /* Adjust font size for mobile */
+    }
 }
 
 /* Custom CSS */
-.logo {
-    width: 100px;
-    height: auto;
-    margin-left: 0; /* Add this line to remove left margin */
-}
-
 .navbar-brand {
-    margin-right: 0;
-    padding: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Add this line to align to the left */
 }
 
-
-.navbar-brand .ml-2 {
-    font-size: 24px; /* Increase font size */
-    font-weight: normal; /* Make text bold */
-    margin-left: 0px; /* Add left margin */
-}
-
-
-
-@media (min-width: 768px) {
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
+.navbar-nav .nav-link {
+    padding: 0 10px;
 }
 
 /* Index.html Styles */
@@ -128,11 +146,11 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 .card-img-top {
     height: 200px;
     object-fit: cover;

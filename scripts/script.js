@@ -1,21 +1,10 @@
-// script.js
-$(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true
-    });
-});
+
+
+// Contact form validation and submission
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
-
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
@@ -67,5 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial slide display
     showSlides(slideIndex);
-});
 
+
+});

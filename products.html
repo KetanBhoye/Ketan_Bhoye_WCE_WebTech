@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,111 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Handmade Crafts</title>
     <!-- Bootstrap CSS CDN link -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./styles/styles.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        .filter-btn {
+            background-color: #f8f9fa;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            margin: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #4f4b4b;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Handmade Crafts</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="products.html">Products <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-                <div class="form-inline ml-auto">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="search()">Search</button>
+    <!-- Header section with navigation bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="./assets/images/logo.png" alt="Handmade Crafts Logo" class="logo">
+                    <span class="ml-2">Handmade Crafts</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Search form -->
+                    <form class="form-inline ml-auto">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="search()">Search</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
-<main class="container mt-4 mb-auto">
-    <h1 class="text-center mb-4">Our Products</h1>
-    <section class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="https://via.placeholder.com/300/e8117f/fff?text=Handmade+Pottery" alt="Handmade Pottery">
-                <div class="card-body">
-                    <h4 class="card-title">Handmade Pottery</h4>
-                    <p class="card-text">Beautifully crafted ceramic pottery pieces, perfect for adding a touch of artistry to your home.</p>
-                    <a href="product-details.html" class="btn btn-primary">View Details</a>
+    <!-- Main content section -->
+    <main class="container mt-4">
+        <h1 class="text-center mb-4">Our Products</h1>
+
+        <!-- Filter buttons -->
+        <div class="text-center mb-4">
+            <button class="btn filter-btn active" data-category="all">All</button>
+            <button class="btn filter-btn" data-category="pottery">Pottery Art</button>
+            <button class="btn filter-btn" data-category="candles">Candles</button>
+            <button class="btn filter-btn" data-category="office">Office Essentials</button>
+            <button class="btn filter-btn" data-category="weaving">Weaving</button>
+            <button class="btn filter-btn" data-category="glass">Glass Art</button>
+        </div>
+
+        <section class="row justify-content-center">
+            <!-- Product cards -->
+            <div class="col-lg-4 col-md-6 mb-4 pottery">
+                <div class="card h-100">
+                    <img class="card-img-top" src="https://images.pexels.com/photos/18799054/pexels-photo-18799054/free-photo-of-close-up-of-a-person-making-pottery.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Handmade Pottery">
+                    <div class="card-body">
+                        <h4 class="card-title">Handmade Pottery</h4>
+                        <p class="card-text">Beautifully crafted ceramic pottery pieces, perfect for adding a touch of artistry to your home.</p>
+                        <a href="product-details.html" class="btn btn-primary">View Details</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="https://via.placeholder.com/300/c8b283/fff?text=Handwoven+Baskets" alt="Handwoven Baskets">
-                <div class="card-body">
-                    <h4 class="card-title">Handwoven Baskets</h4>
-                    <p class="card-text">Meticulously woven baskets crafted from natural materials, perfect for storage or decoration.</p>
-                    <a href="product-details.html" class="btn btn-primary">View Details</a>
+
+            <div class="col-lg-4 col-md-6 mb-4 candles">
+                <div class="card h-100">
+                    <img class="card-img-top" src="https://images.pexels.com/photos/6755869/pexels-photo-6755869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Handmade Candles">
+                    <div class="card-body">
+                        <h4 class="card-title">Handmade Candles</h4>
+                        <p class="card-text">Elegant handmade candles in various scents and designs, perfect for relaxation and decoration.</p>
+                        <a href="product-details.html" class="btn btn-primary">View Details</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="https://via.placeholder.com/300/ffa629/fff?text=Handmade+Jewelry" alt="Handmade Jewelry">
-                <div class="card-body">
-                    <h4 class="card-title">Handmade Jewelry</h4>
-                    <p class="card-text">Unique and stylish handmade jewelry pieces, perfect for adding a personalized touch to your style.</p>
-                    <a href="product-details.html" class="btn btn-primary">View Details</a>
+
+            <div class="col-lg-4 col-md-6 mb-4 office">
+                <div class="card h-100">
+                    <img class="card-img-top" src="https://images.pexels.com/photos/7888651/pexels-photo-7888651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Office Essentials">
+                    <div class="card-body">
+                        <h4 class="card-title">Office Essentials</h4>
+                        <p class="card-text">Handcrafted office supplies to organize your workspace and inspire productivity.</p>
+                        <a href="product-details.html" class="btn btn-primary">View Details</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="https://via.placeholder.com/300/6ab04c/fff?text=Handcrafted+Woodwork" alt="Handcrafted Woodwork">
-                <div class="card-body">
-                    <h4 class="card-title">Handcrafted Woodwork</h4>
-                    <p class="card-text">Exquisite wooden creations, meticulously crafted by skilled artisans, perfect for adding warmth and character to your space.</p>
-                    <a href="product-details.html" class="btn btn-primary">View Details</a>
+
+            <div class="col-lg-4 col-md-6 mb-4 weaving">
+                <div class="card h-100">
+                    <img class="card-img-top" src="https://images.pexels.com/photos/5603009/pexels-photo-5603009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Handmade Weaving">
+                    <div class="card-body">
+                        <h4 class="card-title">Handmade Weaving</h4>
+                        <p class="card-text">Artisanal woven textiles and fabrics, perfect for home decor and personal accessories.</p>
+                        <a href="product-details.html" class="btn btn-primary">View Details</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="https://via.placeholder.com/300/ba68c8/fff?text=Handpainted+Art" alt="Handpainted Art">
-                <div class="card-body">
-                    <h4 class="card-title">Handpainted Art</h4>
-                    <p class="card-text">Vibrant and unique handpainted artworks, perfect for adding a personal touch to your living space.</p>
+
+            <div class="col-lg-4 col-md-6 mb-4 glass">
+                <div class="card h-100">
+                    <img class="card-img-top" src="https://images.pexels.com/photos/6707632/pexels-photo-6707632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Glass Art">
+                    <div class="card-body">
+                    <h4 class="card-title">Glass Art</h4>
+                    <p class="card-text">Hand-blown glass art pieces that add color and sophistication to any space.</p>
                     <a href="product-details.html" class="btn btn-primary">View Details</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="https://via.placeholder.com/300/ff7f50/fff?text=Handmade+Textiles" alt="Handmade Textiles">
-                <div class="card-body">
-                    <h4 class="card-title">Handmade Textiles</h4>
-                    <p class="card-text">Beautifully handcrafted textiles, including scarves, blankets, and tapestries, perfect for adding warmth and texture to your home.</p>
-                    <a href="product-details.html" class="btn btn-primary">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
- 
- <footer class="mt-auto">
+                    </div>
+                    </div>
+                    </div>
+                    </section>
+                    </main>
+                    <!-- Footer section -->
+<footer class="bg-dark text-white mt-4">
     <div class="container">
+        <!-- Social media links -->
         <div class="social">
             <a href="https://facebook.com" target="_blank"><img src="./assets/images/facebook.png" alt="Facebook"></a>
             <a href="https://instagram.com" target="_blank"><img src="./assets/images/instagram.png" alt="Instagram"></a>
@@ -117,14 +153,38 @@
         </div>
         <p>&copy; 2024 Handmade Crafts. All rights reserved.</p>
     </div>
- </footer>
- 
- <!-- Bootstrap JS and jQuery CDN links (for Bootstrap components and functionality) -->
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js" integrity="sha384-QS/2K4W4W7o5P7K4KlIQOJd0ZO4QwFjzLb2S+u9S5DuN0nQoYPZxumfwzjixEzs" crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBPL9P1rh+A8zYar+YXQp+b9XDDci3Y6z" crossorigin="anonymous"></script>
- 
- <!-- Custom script -->
- <script src="./scripts/script.js"></script>
- </body>
- </html>
+</footer>
+
+<!-- Bootstrap JavaScript CDN links -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Owl Carousel JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Custom script for filtering and other functionalities -->
+<script>
+    $(document).ready(function() {
+        // Filter products by category
+        $('.filter-btn').on('click', function() {
+            var category = $(this).data('category');
+
+            // Remove active class from all buttons
+            $('.filter-btn').removeClass('active');
+
+            // Add active class to the clicked button
+            $(this).addClass('active');
+
+            // Hide all cards
+            $('.row > div').hide();
+
+            // Show cards with selected category or all cards if 'All' is selected
+            if (category === 'all') {
+                $('.row > div').show();
+            } else {
+                $('.row > .' + category).show();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
