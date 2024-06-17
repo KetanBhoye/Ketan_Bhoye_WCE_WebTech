@@ -2,6 +2,8 @@
 
 This is a simple website developed for a small business that specializes in selling handmade crafts. The website aims to provide an online presence for the business, showcasing their products and allowing customers to contact them for inquiries.
 
+## - Demo Link: https://ketanbhoye.github.io/Ketan_Bhoye_WCE_WebTech/
+
 ## Features
 
 ### Homepage
@@ -43,10 +45,13 @@ This is a simple website developed for a small business that specializes in sell
 
 The website has been designed with a mobile-first approach, ensuring optimal viewing and user experience across different devices and screen sizes. The responsive layout adapts seamlessly to desktop, tablet, and mobile viewports.
 
-![Responsive Design](responsive-demo.gif)
+
+https://github.com/KetanBhoye/Ketan_Bhoye_WCE_WebTech/assets/77838645/a98076c4-2ede-4187-92a6-c801a1edc5ff
 
 ## Demo
 
 Here's a short video demonstrating the website's functionality and responsiveness:
 
-![Website Demo](website-demo.mp4)
+
+https://github.com/KetanBhoye/Ketan_Bhoye_WCE_WebTech/assets/77838645/ce4248c3-c8e5-4bbc-86f2-8aa8db99ffe4
+
